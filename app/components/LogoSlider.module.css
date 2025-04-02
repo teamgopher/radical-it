@@ -1,0 +1,9 @@
+.slider {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.logo {
+  position: relative;
+  height: 80px;
+}
