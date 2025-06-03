@@ -1,23 +1,26 @@
 import Header from './components/Header';
-import HomeHero from './components/HomeHero';
-import LogoSlider from './components/LogoSlider';
-import { privateLogos, publicLogos } from './config/logos';
-
-import styles from './Home.module.css';
+import HomeHero from './components/home/HomeHero';
+import LogoSlider from './components/home/LogoSlider';
+import Services from './components/home/Services';
+import { privateLogos, publicLogos, badges } from './config/logos';
+import styles from './Home.module.css'
 
 export default function Home() {
   return (
     <div>
-      <Header />
+      <Header transparent />
       <HomeHero />
-      <div className={styles.trustedPartners}>
+      <section className={styles.trustedPartners}>
         <h1 className={styles.title}>Trusted By</h1>
-        <div className={styles.logoSliders}>
+        <div>
           <LogoSlider logos={privateLogos} />
           <LogoSlider logos={publicLogos} />
         </div>
-        <section></section>
+      </section>
+      <div>
+        <LogoSlider logos={badges} />
       </div>
+      <Services />
     </div>
   );
 }

@@ -1,11 +1,15 @@
-"use client";
+'use client';
 import { useState } from 'react';
 import Image from 'next/image';
 import logo from '../../public/logo.png';
-import { Menu, X } from "lucide-react";
+import { Menu, X } from 'lucide-react';
 import './header.css';
 
-const Header = () => {
+interface Props {
+  transparent?: boolean;
+}
+
+const Header = ({ transparent = false }: Props) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className={`header ${transparent ? 'transparent' : ''}`}>
       <Image src={logo} alt="Radical IT Logo" height={120} />
       <h1 className='site-name'>Radical IT</h1>
       <nav id="nav" className={menuOpen ? 'open' : ''}>
