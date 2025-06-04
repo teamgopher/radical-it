@@ -1,8 +1,10 @@
 import Header from './components/Header';
 import HomeHero from './components/home/HomeHero';
 import LogoSlider from './components/home/LogoSlider';
+import QuoteSection from './components/home/QuoteSection';
 import Services from './components/home/Services';
 import { privateLogos, publicLogos, badges } from './config/logos';
+import { quotes } from './config/quotes';
 import styles from './Home.module.css'
 
 export default function Home() {
@@ -17,9 +19,11 @@ export default function Home() {
           <LogoSlider logos={publicLogos} />
         </div>
       </section>
+      <QuoteSection quote={quotes.vikki} />
       <div>
         <LogoSlider logos={badges} />
       </div>
+      <QuoteSection quote={quotes.guy} />
       <Services />
     </div>
   );

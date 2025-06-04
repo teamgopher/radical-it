@@ -1,6 +1,7 @@
 import styles from './Services.module.scss';
 import { Service } from '../../../config/services'
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Props {
   service: Service
@@ -18,11 +19,9 @@ const Card = ({ service }: Props) => {
           className={styles.image}
         />
       </div>
-      <div className={styles.content}>
-        <h2 className={styles.title}>{service.title}</h2>
-        <p className={styles.description}>{service.description}</p>
-        <a href={service.link} className={styles.link}>Learn More</a>
-      </div>
+      <h2 className={styles.title}>{service.title}</h2>
+      <p className={styles.description}>{service.description}</p>
+      <Link href={service.link} className={styles.link}>{service.linkText}</Link>
     </div>
   )
 }

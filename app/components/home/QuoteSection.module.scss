@@ -1,0 +1,138 @@
+@use 'app/styles/colours';
+
+.section {
+  width: 100vw;
+  min-height: 90vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 90vh;
+}
+.backgroundImage {
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 24, 32, 0.52);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 3rem 4vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  gap: 3vw;
+}
+.left {
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.quoteMark {
+  font-size: 6rem;
+  line-height: 0.2;
+  color: colours.$primary;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+.quote {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0;
+  margin-top: 0;
+  word-break: break-word;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  max-width: 40%;
+  text-align: right;
+  gap: 0.15em;
+}
+.name {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.title {
+  font-size: 2rem;
+  color: #e0e0e0;
+  font-weight: 400;
+}
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem 5vw;
+    max-width: 100%;
+   .left, .right {
+    max-width: 100%;
+  }
+  .right {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .quote {
+    font-size: 2.5rem;
+  }
+  .name {
+    font-size: 1.5rem;
+  }
+  .title {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    font-weight: 400;
+  }
+}
+@media (max-width: 600px) {
+  .section {
+    min-height: 360px;
+  }
+  .imageWrapper {
+    min-height: 360px;
+  }
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.4rem 6vw 2.5rem 6vw;
+    gap: 1.2rem;
+  }
+  .quoteMark {
+    font-size: 3rem;
+    margin-bottom: 0.6rem;
+  }
+  .quote {
+    font-size: 1.06rem;
+  }
+  .name {
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 0.92rem;
+  }
+  .right {
+    align-items: flex-start;
+    text-align: left;
+  }
+}}

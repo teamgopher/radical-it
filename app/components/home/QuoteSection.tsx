@@ -1,27 +1,37 @@
-import Image, { StaticImageData } from 'next/image';
-import styles from './QuoteSection.module.css';
+import React from 'react';
+import Image from 'next/image';
+import styles from './QuoteSection.module.scss';
+import { Quote } from '@/app/config/quotes';
 
-interface Props {
-  quote: string
-  coverImage: StaticImageData
-  coverImageAlt: string
+interface QuoteSectionProps {
+  quote: Quote;
 }
 
-const QuoteSection = ({ quote, coverImage, coverImageAlt }: Props) => {
-  return (
-    <section className={styles.section}>
+const QuoteSection: React.FC<QuoteSectionProps> = ({ quote }) => (
+  <section className={styles.section}>
+    <div className={styles.imageWrapper}>
       <Image
-        src={coverImage}
-        className={styles.coverImage}
-        alt={coverImageAlt}
+        src={quote.imageUrl}
+        alt=""
+        fill
+        priority
+        className={styles.backgroundImage}
+        sizes="100vw"
       />
-      <div className={styles.quoteContainer}>
-        <p className={styles.quote}>{quote}</p>
-        <p className={styles.author}>- Vikki</p>
-        <p className={styles.position}>Founder & CEO</p>
+      <div className={styles.overlay}>
+        <div className={styles.content}>
+          <div className={styles.left}>
+            <div className={styles.quoteMark} aria-hidden>“</div>
+            <p className={styles.quote}>{quote.quote}”</p>
+          </div>
+          <div className={styles.right}>
+            <div className={styles.name}>{quote.name}</div>
+            <div className={styles.title}>{quote.title}</div>
+          </div>
+        </div>
       </div>
-    </section>
-  )
-}
+    </div>
+  </section>
+);
 
 export default QuoteSection;
