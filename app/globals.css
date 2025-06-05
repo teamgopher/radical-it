@@ -5,11 +5,3 @@ body {
   height: 100%;
   max-width: 100vw;
 }
-
-:root {
-  --primary-color: #48ACFB;
-  --secondary-color: #97CA33;
-
-  --primary-text-color: #333;
-  --secondary-text-color: #666;
-}

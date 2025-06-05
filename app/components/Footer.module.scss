@@ -1,0 +1,88 @@
+@use 'app/styles/colours';
+
+.footer {
+  background: colours.$primary;
+  color: #fff;
+  padding: 10vh 4vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 30vh;
+  justify-content: space-between;
+}
+.content {
+  max-width: 1600px;
+  margin-left: 48px;
+  padding-bottom: 48px;
+}
+.logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+}
+.description {
+  font-weight: 300;
+  font-size: 1.22rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+.icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 8px;
+}
+.iconLink {
+  display: flex;
+  align-items: center;
+  transition: transform .18s;
+  outline: none;
+  text-decoration: none;
+  color: white;
+}
+.iconLink:focus,
+.iconLink:hover {
+  transform: scale(1.14);
+}
+.bottomBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 48px;
+  color: #fff;
+  opacity: 0.9;
+  font-size: 1rem;
+  gap: 2rem;
+  margin-top: 20px;
+}
+.links {
+  display: flex;
+  gap: 1.4rem;
+}
+.links a {
+  color: #fff;
+  text-decoration: underline;
+  opacity: 0.92;
+  font-size: 1rem;
+  transition: color .16s;
+  font-weight: 400;
+}
+.links a:hover,
+.links a:focus {
+  color: #1b4486;
+  text-decoration: underline;
+  outline: none;
+}
+@media (max-width: 700px) {
+  .content, .bottomBar {
+    margin-left: 4vw;
+    max-width: 96vw;
+    padding-right: 4vw;
+  }
+  .footer {
+    padding: 36px 0 18px 0;
+  }
+  .description {
+    font-size: 1rem;
+  }
+}

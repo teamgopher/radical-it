@@ -2,7 +2,7 @@
 
 .container {
   width: 100%;
-  padding: 0.5rem 0;
+  padding: 3rem 0;
   .title {
     text-align: center;
     font-size: 3rem;
@@ -34,10 +34,12 @@
 }
 
 .card {
+  min-height: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 5px;
   padding: 20px;
   border-radius: 8px;
   background-color: white;
@@ -81,8 +83,11 @@
     color: white;
     font-weight: 600;
     transition: color 0.3s;
-    padding: 10px 20px;
+    padding: 10px;
+    min-width: 200px;
     border-radius: 6px;
+    font-size: 1.2rem;
+    line-height: 30px;
 
     &:hover {
       background-color: colours.$primary-hover;

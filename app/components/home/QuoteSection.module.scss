@@ -86,7 +86,8 @@
     gap: 2rem;
     padding: 2rem 5vw;
     max-width: 100%;
-   .left, .right {
+  }
+  .left, .right {
     max-width: 100%;
   }
   .right {
@@ -123,7 +124,7 @@
     margin-bottom: 0.6rem;
   }
   .quote {
-    font-size: 1.06rem;
+    font-size: 1.5rem;
   }
   .name {
     font-size: 1rem;
@@ -135,4 +136,4 @@
     align-items: flex-start;
     text-align: left;
   }
-}}
+}

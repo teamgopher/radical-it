@@ -1,31 +1,42 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import logo from '../../public/logo.png';
 import { Menu, X } from 'lucide-react';
-import './header.css';
+import styles from './Header.module.scss';
 
-interface Props {
-  transparent?: boolean;
-}
-
-const Header = ({ transparent = false }: Props) => {
+const Header = () => {
+  const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const isHomePage = pathname === '/';
+
+  const headerClasses = `${styles.header} ${isHomePage ? styles.transparent : ''}`;
+  const navClasses = `${styles.nav} ${menuOpen ? styles.open : ''}`;
+  
   return (
-    <header className={`header ${transparent ? 'transparent' : ''}`}>
-      <Image src={logo} alt="Radical IT Logo" height={120} />
-      <h1 className='site-name'>Radical IT</h1>
-      <nav id="nav" className={menuOpen ? 'open' : ''}>
+    <header className={headerClasses}>
+      <Image src={logo} alt="Radical IT Logo" className={styles.logo} />
+      {/* Wrap h1 with Link component */}
+      <Link href="/" className={styles.siteNameLink}>
+        <h1 className={styles.siteName}>Radical IT</h1>
+      </Link>
+      <nav className={navClasses}>
         <a href="/about">About</a>
         <a href="/services">Resources</a>
       </nav>
-      <button id="menu-toggle" aria-label="Toggle menu" onClick={toggleMenu}>
-        {menuOpen ? <X id="close-icon" /> : <Menu id="menu-icon" />}
+      <button
+        className={styles.menuToggle}
+        aria-label="Toggle menu"
+        onClick={toggleMenu}
+      >
+        {menuOpen ? <X className={styles.closeIcon} /> : <Menu className={styles.menuIcon} />}
       </button>
     </header>
   );

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 
 export const metadata: Metadata = {
@@ -28,7 +30,9 @@ export default function RootLayout({children}: Readonly<{
         <title>Radical IT </title>
       </head>
       <body>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -12,9 +12,8 @@
   margin: 0 auto;
 }
 
-.quoteCoverImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 29% 28%;
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
 }
