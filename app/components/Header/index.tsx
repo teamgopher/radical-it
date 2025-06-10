@@ -3,11 +3,12 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import logo from '../../public/logo.png';
+import logo from '../../../public/logo.png';
 import { Menu, X } from 'lucide-react';
 import styles from './Header.module.scss';
+import Navbar from './Navbar';
 
-const Header = () => {
+export default function Header() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -18,19 +19,14 @@ const Header = () => {
   const isHomePage = pathname === '/';
 
   const headerClasses = `${styles.header} ${isHomePage ? styles.transparent : ''}`;
-  const navClasses = `${styles.nav} ${menuOpen ? styles.open : ''}`;
   
   return (
     <header className={headerClasses}>
-      <Image src={logo} alt="Radical IT Logo" className={styles.logo} />
-      {/* Wrap h1 with Link component */}
       <Link href="/" className={styles.siteNameLink}>
+        <Image src={logo} alt="Radical IT Logo" className={styles.logo} />
         <h1 className={styles.siteName}>Radical IT</h1>
       </Link>
-      <nav className={navClasses}>
-        <a href="/about">About</a>
-        <a href="/services">Resources</a>
-      </nav>
+      <Navbar menuOpen={menuOpen} />
       <button
         className={styles.menuToggle}
         aria-label="Toggle menu"
@@ -41,5 +37,3 @@ const Header = () => {
     </header>
   );
 }
-
-export default Header;

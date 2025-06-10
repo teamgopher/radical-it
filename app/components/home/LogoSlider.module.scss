@@ -1,7 +1,7 @@
 .embla {
   max-width: 70rem;
   margin: 2rem auto;
-  --slide-height: 10rem;
+  --slide-height: 10rem; // these have to be css variables for embla to work properly
   --slide-spacing: 1rem;
   --slide-size: 20%;
 
