@@ -1,4 +1,5 @@
 'use client';
+// Local imports
 import styles from './HomeHero.module.scss';
 
 const HomeHero = () => {

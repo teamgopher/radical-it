@@ -1,4 +1,4 @@
-
+// Local imports
 import { navigation } from '../../config/navigation';
 import styles from './Header.module.scss';
 

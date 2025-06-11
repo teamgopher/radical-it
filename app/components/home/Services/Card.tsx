@@ -1,7 +1,10 @@
-import styles from './Services.module.scss';
-import { Service } from '../../../config/services'
+// Global imports
 import Image from 'next/image';
 import Link from 'next/link';
+
+// Local imports
+import styles from './Services.module.scss';
+import { Service } from '../../../config/services'
 
 interface Props {
   service: Service

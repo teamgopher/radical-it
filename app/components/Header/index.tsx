@@ -1,10 +1,13 @@
 'use client';
-import { useState } from 'react';
+// Global imports
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+
+// Local imports
 import logo from '../../../public/logo.png';
-import { Menu, X } from 'lucide-react';
 import styles from './Header.module.scss';
 import Navbar from './Navbar';
 

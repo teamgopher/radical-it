@@ -1,7 +1,10 @@
-import linkedin from '../../public/icons/linkedin.png';
-import Image from 'next/image';
-import styles from './Footer.module.scss';
+// Global imports
 import { Mail } from 'lucide-react';
+import Image from 'next/image';
+
+// Local imports
+import linkedin from '../../public/icons/linkedin.png';
+import styles from './Footer.module.scss';
 
 const Footer: React.FC = () => (
   <footer className={styles.footer}>

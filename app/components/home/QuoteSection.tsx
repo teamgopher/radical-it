@@ -1,6 +1,9 @@
+// Global imports
 import Image from 'next/image';
-import styles from './QuoteSection.module.scss';
+
+// Local imports
 import { Quote } from '@/app/config/quotes';
+import styles from './QuoteSection.module.scss';
 
 interface QuoteSectionProps {
   quote: Quote;

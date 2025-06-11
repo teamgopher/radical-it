@@ -1,6 +1,8 @@
+import { FlatCompat } from '@eslint/eslintrc';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { FlatCompat } from '@eslint/eslintrc';
+
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,18 +15,27 @@ const eslintConfig = [
   ...compat.config({
     rules: {
       quotes: ['error', 'single', { avoidEscape: true }],
-      indent: ['error', 2, { SwitchCase: 1 }],
-      'jsx-a11y/label-has-associated-control': [
+      'sort-imports': [
         'error',
         {
-          controlComponents: [
-            'DateTimeInput',
-            'EntryContent',
-            'SelectField'
-          ],
-          assert: 'both'
+          ignoreDeclarationSort: true,
+          ignoreCase: true,
+          allowSeparatedGroups: true
         }
       ],
+      // 'import/order': [
+      //   'error',
+      //   {
+      //     'groups': [
+      //       ['builtin', 'external'], // 1st group: global
+      //       ['internal', 'parent', 'sibling', 'index'] // 2nd group: everything local
+      //     ],
+      //     'alphabetize': { 'order': 'asc', 'caseInsensitive': true },
+      //     'newlines-between': 'always',
+      //     'pathGroupsExcludedImportTypes': ['builtin', 'external']
+      //   }
+      // ],
+      'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
       'react/function-component-definition': 'off',
       'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
       'react/jsx-uses-react': 'off',
