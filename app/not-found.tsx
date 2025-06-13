@@ -1,5 +1,7 @@
-// Local imports
+// Global imports
 import Link from 'next/link'
+
+// Local imports
 import styles from './Error.module.scss'
 
 export default function NotFound() {

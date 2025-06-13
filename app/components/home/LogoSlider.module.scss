@@ -1,5 +1,5 @@
 .embla {
-  max-width: 70rem;
+  max-width: 80rem;
   margin: 2rem auto;
   --slide-height: 10rem; // these have to be css variables for embla to work properly
   --slide-spacing: 0.5rem;
@@ -31,8 +31,7 @@
     object-fit: contain;
   }
 
-
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     --slide-size: 30%;
   }
 

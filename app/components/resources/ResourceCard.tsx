@@ -1,6 +1,5 @@
 // Global imports
 import Image from 'next/image';
-import Link from 'next/link';
 
 // Local imports
 import styles from './ResourceCard.module.scss';
@@ -23,9 +22,10 @@ const ResourceCard = ({ resource }: Props) => {
         />
       </div>
       <h2 className={styles.title}>{resource.title}</h2>
-      <Link href={resource.link} className={styles.link}>
-      <Download className={styles.icon} />
-      Download</Link>
+      <a href={resource.link} className={styles.link} download>
+        <Download className={styles.icon} />
+        Download
+      </a>
     </div>
   )
 }

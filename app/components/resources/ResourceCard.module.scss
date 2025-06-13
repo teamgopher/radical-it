@@ -8,19 +8,20 @@
   gap: 5px;
   border-radius: 8px;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 4px rgba(0,0,0,0.2);
   border: 1px solid #EEE;
 
   .imgContainer {
     width: 100%;
-    height: 240px;
     overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    margin-top: -5px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 
     .image {
       position: relative !important;
+      object-fit: contain;
     }
   }
 
@@ -45,7 +46,6 @@
     font-weight: 600;
     transition: color 0.3s;
     padding: 10px;
-    min-width: 200px;
     border-radius: 6px;
     font-size: 1.2rem;
     line-height: 30px;
