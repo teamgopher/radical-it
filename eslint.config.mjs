@@ -2,8 +2,6 @@ import { FlatCompat } from '@eslint/eslintrc';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -35,6 +33,7 @@ const eslintConfig = [
       //     'pathGroupsExcludedImportTypes': ['builtin', 'external']
       //   }
       // ],
+      'comma-dangle': ['error', 'never'],
       'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
       'react/function-component-definition': 'off',
       'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],

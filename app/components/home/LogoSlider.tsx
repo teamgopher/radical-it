@@ -29,7 +29,7 @@ const LogoSlider = ({ logos }: Props) => {
         <div className={styles.container}>
           {logos.map((logo, index) => (
             <div className={styles.slide} key={index}>
-              <Image src={logo} alt={`Logo ${index + 1}`} height={160} width={130} className={styles.logo}/>
+              <Image src={logo} alt={`Logo ${index + 1}`} height={160} width={170} className={styles.logo}/>
             </div>
           ))}
         </div>
